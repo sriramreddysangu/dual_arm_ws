@@ -1,0 +1,103 @@
+dual_arm_pipeline:
+  ros__parameters:
+    
+    robot1_base_y: 0.5     
+    robot2_base_y: -0.5    
+    
+    
+    collision_threshold: 0.15    
+    safety_margin: 0.02          
+    
+    
+    hierarchical_max_depth: 5     
+    samples_per_segment: 20       
+    
+    
+    rrt_max_iterations: 5000
+    rrt_step_size: 0.1            
+    rrt_goal_bias: 0.1            
+    rrt_rewire_radius: 0.5       
+    rrt_num_warm_samples: 20
+    
+    
+    rrt_deviation_weight: 1.0     
+    rrt_length_weight: 1.0        
+    
+   
+    use_informed_sampling: true
+    
+    
+    bspline_degree: 3            
+    trajectory_duration: 10.0    
+    
+  
+    smoothness_weight: 1.0
+    deviation_weight: 10.0
+    num_smoothing_iterations: 3
+    parabolic_blend_radius: 0.1   
+    
+ 
+    control_rate: 100.0          
+    position_tolerance: 0.01     
+    velocity_tolerance: 0.1      
+    
+   
+    ik_accuracy_threshold: 0.02   
+    max_ik_solutions: 8
+    
+    
+    joint_limits:
+      joint1: [-3.14159, 3.14159]    
+      joint2: [-1.91986, 1.91986]   
+      joint3: [-2.26893, 2.26893]   
+      joint4: [-6.28319, 6.28319]   
+      joint5: [-2.09440, 2.09440]    
+      joint6: [-6.28319, 6.28319]    
+    
+   
+    joint_velocity_limits: [2.0, 2.0, 2.0, 3.0, 3.0, 3.0]
+    
+ 
+    joint_acceleration_limits: [5.0, 5.0, 5.0, 8.0, 8.0, 8.0]
+    
+    
+    joint_jerk_limits: [20.0, 20.0, 20.0, 30.0, 30.0, 30.0]
+    
+   
+    workspace_bounds: [-0.8, 0.8, -1.0, 1.0, 0.0, 1.0]
+    
+    
+    log_level: 'info'  
+    
+  
+    enable_visualization: true
+    marker_scale: 0.02
+
+
+    
+dsr_position_controller:
+  type: position_controllers/JointGroupPositionController   
+
+  ros__parameters:
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    gains:  
+      joint_1: {p: 50.0, i: 0.5, d: 5.0}
+      joint_2: {p: 50.0, i: 0.5, d: 5.0}
+      joint_3: {p: 40.0, i: 0.3, d: 4.0}
+      joint_4: {p: 30.0, i: 0.2, d: 3.0}
+      joint_5: {p: 25.0, i: 0.0,  d: 2.0}
+      joint_6: {p: 20.0, i: 0.0,  d: 1.5}

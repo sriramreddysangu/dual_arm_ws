@@ -1,0 +1,85 @@
+workspace_bounds:
+  x_min: -0.8
+  x_max: 0.8
+  y_min: -1.0
+  y_max: 1.0
+  z_min: 0.0
+  z_max: 1.5      
+
+robot1_base_y: 0.5   
+robot2_base_y: -0.5  
+
+
+min_arm_separation: 0.3      
+min_movement_distance: 0.1   
+max_movement_distance: 0.6  
+
+
+working_z_min: 0.2           
+working_z_max: 1.4          
+
+
+preferred_zones:
+  
+  
+  arm1_start_zone:
+    x: [0.3, 0.7]
+    y: [0.3, 0.7]
+    z: [0.3, 0.7]
+  
+  arm1_target_zone:
+    x: [-0.7, 0.7]
+    y: [0.2, 0.8]
+    z: [0.2, 0.8]
+  
+  arm2_start_zone:
+    x: [0.3, 0.7]
+    y: [-0.7, -0.3]
+    z: [0.3, 0.7]
+  
+  arm2_target_zone:
+    x: [-0.7, 0.7]
+    y: [-0.8, -0.2]
+    z: [0.2, 0.8]
+
+
+strategies:
+  random:
+    
+    enabled: true
+    bias_toward_center: false
+    
+  challenging:
+    
+    enabled: true
+    crossing_paths: true
+    close_approach: true
+    min_separation_override: 0.25  
+    
+  systematic:
+    
+    enabled: true
+    grid_resolution: 0.2  
+    coverage_percentage: 80  
+
+
+collision_testing:
+  
+  include_parallel_movements: true
+  include_opposite_movements: true
+  include_crossing_movements: true
+  include_near_miss_scenarios: true
+
+
+performance:
+  max_position_generation_attempts: 100
+  inter_trial_delay: 0.5 
+  save_intermediate_results: true
+  
+
+reporting:
+  generate_visualizations: false 
+  detailed_collision_analysis: true
+  save_position_heatmaps: false
+  export_formats: ['json', 'csv', 'markdown']
+
