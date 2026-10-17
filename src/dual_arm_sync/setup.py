@@ -22,7 +22,7 @@ setup(
     maintainer='Dual Arm Team',
     maintainer_email='me24s501@iittp.ac.in',
     description='Dual-arm trajectory generation with collision detection',
-    license='IIT',
+    license='IIT TIRUPATI',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
