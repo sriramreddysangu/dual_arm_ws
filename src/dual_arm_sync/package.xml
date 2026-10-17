@@ -4,21 +4,23 @@
   <name>dual_arm_sync</name>
   <version>1.0.0</version>
   <description>
-    Synchronized dual-arm trajectory generation for Doosan M1013 robots.
-    Implements hierarchical collision detection, RRT-Connect with warm-start,
-    and B-spline trajectory optimization.
-    Based on: "Generation of Synchronized Configuration Space Trajectories 
-    of Multi-Robot Systems" by Ariyan Kabir
+    Kuramoto-synchronized, collision-free configuration-space trajectory
+  generation for ensembles of Doosan M1013 manipulators sharing a workspace.
+  Each arm follows an unmodified B-spline path under a repulsive Kuramoto
+  phase-oscillator model; only pairs that timing cannot separate are
+  deformed with a perpendicular escape injected as B-spline control points.
+  Collision decisions use the true convex collision meshes. Includes 2-, 4-
+  and 6-arm cells, Gazebo execution and closed-loop benchmarks.
   </description>
   
-  <maintainer email="your.email@example.com">Your Name</maintainer>
-  <license>MIT</license>
+  <maintainer email="sangu2002.ss@gmail.com">Sriram reddy sangu</maintainer>
+  <license>IIT TIRUPATI</license>
   
   <url type="website">https://github.com/yourusername/dual_arm_sync</url>
   <url type="repository">https://github.com/yourusername/dual_arm_sync</url>
   <url type="bugtracker">https://github.com/yourusername/dual_arm_sync/issues</url>
   
-  <author email="your.email@example.com">Your Name</author>
+  <author email="sangu2002.ss@gmail.com">SRIRAM REDDY SANGU</author>
   
   
   <buildtool_depend>ament_python</buildtool_depend>
