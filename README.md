@@ -88,7 +88,7 @@ cd ~/ros2_ws && colcon build
 source ~/ros2_ws/install/setup.bash
 
 # 2. This workspace, downloaded as ~/dual_arm_ws
-mkdir -p ~/dual_arm_ws/src && cd ~/dual_arm_ws/src
+cd ~
 git clone https://github.com/sriramreddysangu/dual_arm_ws.git dual_arm_ws
 
 # 3. Python dependencies
